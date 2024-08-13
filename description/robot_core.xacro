@@ -1,22 +1,27 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
+    <xacro:include filename="inertial_macros.xacro"/>
+    
+
     <material name = "white">
         <color rgba = "1 1 1 1"/>
     </material>
 
     <material name = "orange">
-        <color rgba = "1 1 1 1"/>
+        <color rgba = "1 0.3 0.1 1"/>
     </material>
 
     <material name = "blue">
-        <color rgba = "1 1 1 1"/>
+        <color rgba = "0.3 0.3 1 1"/>
     </material>
 
     <material name = "black">
-        <color rgba = "1 1 1 1"/>
+        <color rgba = "0 0 0 1"/>
     </material>
-<!-- base link -->
+
+
+    <!-- base link -->
     <link name = "base_link">
 
     </link>
@@ -36,6 +41,18 @@
             </geometry>
             <material name="white"/>
         </visual>
+
+        <collision>
+            <origin xyz = "0 0 0.035"/>
+            <geometry>
+                <cylinder radius = "0.125" length = "0.07"/> 
+            </geometry>
+        </collision>
+
+        <xacro:inertial_cylinder mass= "0.5" radius="0.125" length="0.07">
+            <origin xyz="0.0 0.0 0.035" rpy="0.0 0.0 0.0"/>
+            
+        </xacro:inertial_cylinder>
     </link>
 
     <!-- left wheel -->
@@ -51,10 +68,21 @@
     <link name="left_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.065" length="0.026"/>
+                <cylinder radius="0.0325" length="0.026"/>
             </geometry>
             <material name="blue"/>
         </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.0325" length="0.026"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_cylinder mass= "0.1" radius="0.125" length="0.026">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            
+        </xacro:inertial_cylinder>
     </link>
 
     <!-- right wheel -->
@@ -70,10 +98,76 @@
     <link name="right_wheel">
         <visual>
             <geometry>
-                <cylinder radius="0.065" length="0.026"/>
+                <cylinder radius="0.0325" length="0.026"/>
             </geometry>
             <material name="blue"/>
         </visual>
+
+        <collision>
+            <geometry>
+                <cylinder radius="0.0325" length="0.026"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_cylinder mass= "0.1" radius="0.125" length="0.026">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            
+        </xacro:inertial_cylinder>
     </link>
 
+<!-- front Castor wheel -->
+    <joint name="front_castor_wheel_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="front_castor_wheel"/>
+        <origin xyz="0.08 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="front_castor_wheel">
+        <visual>
+            <geometry>
+                <sphere radius="0.0325"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <sphere radius="0.0325"/>
+            </geometry>
+        </collision>
+
+        <xacro:inertial_sphere mass= "0.1" radius="0.325">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            
+        </xacro:inertial_sphere>
+        
+    </link>
+
+    <!-- back Castor wheel -->
+    <joint name="back_castor_wheel_joint" type="fixed">
+        <parent link="chassis"/>
+        <child link="back_castor_wheel"/>
+        <origin xyz="-0.08 0.0 0.0" rpy="0.0 0.0 0.0"/>
+    </joint>
+
+    <link name="back_castor_wheel">
+        <visual>
+            <geometry>
+                <sphere radius="0.0325"/>
+            </geometry>
+            <material name="black"/>
+        </visual>
+
+        <collision>
+            <geometry>
+                <sphere radius="0.0325"/>
+            </geometry>
+        </collision>
+        
+        <xacro:inertial_sphere mass= "0.1" radius="0.325">
+            <origin xyz="0.0 0.0 0.0" rpy="0.0 0.0 0.0"/>
+            
+        </xacro:inertial_sphere>
+    </link>
+    
 </robot>
