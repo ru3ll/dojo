@@ -55,8 +55,11 @@ sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup
 ```
 
 ### Running nav2
+
+run in the dojo2024 workspace folder
+
 ```
-ros2 run nav2_map_server map_server --ros-args -p yaml_filename:=my_map_save.yaml -p use_sim_time:=true
+ros2 run nav2_map_server map_server --ros-args -p yaml_filename:=map_save.yaml -p use_sim_time:=true
 ```
 
 #### Activate the node
@@ -74,6 +77,8 @@ ros2 run nav2_amcl amcl --ros-args -p use_sim_time:=true
 ```
 ros2 run nav2_util lifecycle_bringup amcl
 ```
+### RPLIDAR
 
+#### Installation
 
-
+follow instructions on  https://github.com/Slamtec/sllidar_ros2 and add it to the repo
