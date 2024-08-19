@@ -10,9 +10,9 @@ sudo apt install ros-humble-gazebo-ros-pkgs
 sudo apt install python3-colcon-common-extensions
 ```
 
-### Controller manager
+### Teleop Twist with topic remapo
 ```
-
+ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
 ```
 
 # Ros 2 Control
@@ -45,3 +45,35 @@ cp /opt/ros/humble/share/slam_toolbox/config/mapper_params_online_async.yaml ./s
 ros2 launch slam_toolbox online_async_launch.py slam_params_file:=./src/dojo/config/mapper_params_online_async.yaml use_sim_time:=true
 
 ```
+
+save the map
+
+### install nav2
+
+```
+sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup
+```
+
+### Running nav2
+```
+ros2 run nav2_map_server map_server --ros-args -p yaml_filename:=my_map_save.yaml -p use_sim_time:=true
+```
+
+#### Activate the node
+```
+ros2 run nav2_util lifecycle_bringup map_server
+```
+
+### Run AMCL (Monty Carlo Localisarion)
+
+```
+ros2 run nav2_amcl amcl --ros-args -p use_sim_time:=true
+```
+
+#### Activate the node
+```
+ros2 run nav2_util lifecycle_bringup amcl
+```
+
+
+

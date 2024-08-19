@@ -276,10 +276,10 @@
         <collision name='Wall_21_Collision'>
           <geometry>
             <box>
-              <size>1.8 0.02 0.3</size>
+              <size>1.5 0.02 0.3</size>
             </box>
           </geometry>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0.15 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -295,10 +295,10 @@
           </surface>
         </collision>
         <visual name='Wall_21_Visual'>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0.15 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>1.8 0.02 0.3</size>
+              <size>1.5 0.02 0.3</size>
             </box>
           </geometry>
           <material>
@@ -324,7 +324,7 @@
               <size>2.4 0.02 0.3</size>
             </box>
           </geometry>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0.15 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -340,7 +340,7 @@
           </surface>
         </collision>
         <visual name='Wall_34_Visual'>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0.15 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
               <size>2.4 0.02 0.3</size>
@@ -366,10 +366,10 @@
         <collision name='Wall_36_Collision'>
           <geometry>
             <box>
-              <size>1.8 0.02 0.3</size>
+              <size>1.5 0.02 0.3</size>
             </box>
           </geometry>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0.15 0 1.25 0 -0 0</pose>
           <max_contacts>10</max_contacts>
           <surface>
             <contact>
@@ -385,10 +385,10 @@
           </surface>
         </collision>
         <visual name='Wall_36_Visual'>
-          <pose>0 0 1.25 0 -0 0</pose>
+          <pose>0.15 0 1.25 0 -0 0</pose>
           <geometry>
             <box>
-              <size>1.8 0.02 0.3</size>
+              <size>1.5 0.02 0.3</size>
             </box>
           </geometry>
           <material>
