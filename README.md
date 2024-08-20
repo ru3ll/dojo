@@ -58,8 +58,10 @@ sudo apt install ros-humble-navigation2 ros-humble-nav2-bringup
 
 run in the dojo2024 workspace folder
 
+You can get the my_map_save files in https://github.com/ru3ll/dojo2024
+
 ```
-ros2 run nav2_map_server map_server --ros-args -p yaml_filename:=map_save.yaml -p use_sim_time:=true
+ros2 run nav2_map_server map_server --ros-args -p yaml_filename:=my_map_save.yaml -p use_sim_time:=true
 ```
 
 #### Activate the node
