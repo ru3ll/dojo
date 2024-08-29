@@ -1,3 +1,17 @@
+### NB: To run this package you need to have a few packages installed
+
+These packages include 
+- [Gazebo](#gazebo)
+- [Colcon](#colcon)
+- [Teleop_twist](#teleop-twist-with-topic-remap)
+- [Twist_mux](#install-twist_mux-to-allow-for-parallel-control)
+- [Nav2](#running-nav2)
+- [Slam Tool box](#slam)
+- [Ros2 Control](#ros-2-control)
+
+The steps are outlined below. If you have already installed the packages, head over to [Localisation](#how-to-run-localisation)
+
+
 # Installing packages
 
 ### Gazebo
@@ -10,7 +24,7 @@ sudo apt install ros-humble-gazebo-ros-pkgs
 sudo apt install python3-colcon-common-extensions
 ```
 
-### Teleop Twist with topic remapo
+### Teleop Twist with topic remap
 ```
 ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/diff_cont/cmd_vel_unstamped
 ```
@@ -69,7 +83,7 @@ ros2 run nav2_map_server map_server --ros-args -p yaml_filename:=my_map_save.yam
 ros2 run nav2_util lifecycle_bringup map_server
 ```
 
-### Run AMCL (Monty Carlo Localisarion)
+### Run AMCL (Monty Carlo Localisation)
 
 ```
 ros2 run nav2_amcl amcl --ros-args -p use_sim_time:=true
@@ -84,12 +98,6 @@ ros2 run nav2_util lifecycle_bringup amcl
 #### Installation
 
 follow instructions on  https://github.com/Slamtec/sllidar_ros2 and add it to the repo
-
-# Nav2
-### Activation
-```
-ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
-```
 
 ### install twist_mux to allow for parallel control
 ```
@@ -127,6 +135,8 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/cm
 
 ### Step 4:
 Launch SLAM for navigation
+
+#### Change line 23 in ```config/mapper_params_online_async.yaml``` to point to the your local machines name
 ```
 ros2 launch slam_toolbox online_async_launch.py slam_params_file:=./src/dojo/config/mapper_params_online_async.yaml use_sim_time:=true
 ```
