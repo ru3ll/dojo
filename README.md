@@ -128,11 +128,11 @@ ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args -r /cmd_vel:=/cm
 ### Step 4:
 Launch SLAM for navigation
 ```
-ros2 launch dojo localization_launch.py 
+ros2 launch slam_toolbox online_async_launch.py slam_params_file:=./src/dojo/config/mapper_params_online_async.yaml use_sim_time:=true
 ```
 
 ### Step 5:
 Launch Nav2
 ```
-ros2 launch dojo navigation_launch.py use_sim_time:=true map subscribe transient_local:=true
+ros2 launch nav2_bringup navigation_launch.py use_sim_time:=true
 ```
