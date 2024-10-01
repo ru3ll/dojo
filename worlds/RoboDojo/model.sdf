@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.7">
+    <model name="Charmander">
+        <link name="link">
+            <pose>0 0 0.0 0 0 0</pose>
+            <inertial>
+                <mass>515.7</mass>
+                <inertia>
+                  <ixx>643.353820772141</ixx>
+                  <iyy>2504.424799241</iyy>
+                  <izz>1868.80647846886</izz>
+                  <ixy>8.01032679469374E-14</ixy>
+                  <ixz>-48.0514336011478</ixz>
+                  <iyz>1.24700497941112E-14</iyz>
+                </inertia>
+              </inertial>
+            <collision name="collision">
+                <geometry>
+                    <mesh>
+                        <uri>model://RoboDojo/meshes/world.dae</uri>
+                        <scale>1 1 1</scale>
+                    </mesh>
+                </geometry>
+            </collision>
+            <visual name="visual">
+                <geometry>
+                    <mesh>
+                        <uri>model://RoboDojo/meshes/world.dae</uri>
+                        <scale>1 1 1</scale>
+                    </mesh>
+                </geometry>
+            </visual>
+        </link>
+        
+    </model>
+</sdf>
