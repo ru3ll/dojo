@@ -9,7 +9,7 @@ Panels:
         - /Map1/Topic1
         - /Map2
       Splitter Ratio: 0.5
-    Tree Height: 690
+    Tree Height: 341
   - Class: rviz_common/Selection
     Name: Selection
   - Class: rviz_common/Tool Properties
@@ -117,9 +117,9 @@ Visualization Manager:
       Enabled: true
       Invert Rainbow: false
       Max Color: 255; 255; 255
-      Max Intensity: 0
+      Max Intensity: 47
       Min Color: 0; 0; 0
-      Min Intensity: 0
+      Min Intensity: 47
       Name: LaserScan
       Position Transformer: XYZ
       Selectable: true
@@ -328,7 +328,7 @@ Visualization Manager:
   Value: true
   Views:
     Current:
-      Angle: -1.5350205898284912
+      Angle: -1.5600205659866333
       Class: rviz_default_plugins/TopDownOrtho
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
